@@ -6,6 +6,7 @@
   console.log(songs)
 </script>
 
+<h1 class="text-4xl pb-3">Results</h1>
 <section>
   <div class="grid grid-cols-2 2xl:grid-cols-3 gap-3">
   {#each songs as song (song.trackId)}
