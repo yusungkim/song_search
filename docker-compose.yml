@@ -1,0 +1,29 @@
+services:
+  app:
+    platform: linux/amd64 # for M1 chip
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: song_search
+    # command: 'yarn dev' # for dev
+    # command: 'yarn preview' # for production preview
+    tty: true
+    volumes:
+      - .:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
+    ports:
+      - 3000:3000 # dev
+      - 3001:3001 # preview
+    networks:
+      - song_search
+
+networks:
+  song_search:
+
+volumes:
+  node_modules:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${PWD}/node_modules
+      o: bind
