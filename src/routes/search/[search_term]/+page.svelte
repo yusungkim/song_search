@@ -10,7 +10,7 @@
 <section>
   <div class="grid grid-cols-2 2xl:grid-cols-3 gap-3">
   {#each songs as song (song.trackId)}
-    <button on:click={()=>goto(`/search/${searchTerm}/${song.trackId}`)}>
+    <button on:click|self={()=>goto(`/search/${searchTerm}/${song.trackId}`)}>
       <SongCard {song} />
     </button>
   {/each}

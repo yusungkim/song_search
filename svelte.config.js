@@ -11,6 +11,9 @@ const config = {
       postcss: true,
     }),
   ],
+  ssr: {
+    noExternal: ["svelte-hero-icons"],
+  }
 };
 
 export default config;
