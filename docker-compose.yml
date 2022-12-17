@@ -22,8 +22,8 @@ networks:
 
 volumes:
   node_modules:
-    driver: local
-    driver_opts:
-      type: none
-      device: ${PWD}/node_modules
-      o: bind
+    # driver: local
+    # driver_opts:
+    #   type: none
+    #   device: ${PWD}/node_modules
+    #   o: bind
